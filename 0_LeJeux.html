@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Le Jeu</title>
+    <!-- IMPORTANT: Inclure le script de protection -->
+    <script src="auth-check.js"></script>
+</head>
+<body>
+    <h1>Bienvenue dans le jeu !</h1>
+    <!-- Votre contenu de jeu ici -->
+    
+    <div id="logout-container"></div>
+    
+    <script>
+        // Ajouter un bouton de déconnexion
+        document.addEventListener('DOMContentLoaded', function() {
+            addLogoutButton('logout-container');
+        });
+    </script>
+</body>
+</html>
