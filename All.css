@@ -30,3 +30,18 @@ body {
     font-size: 0.9em;
     box-sizing: border-box;
 }
+
+main {
+    background: linear-gradient(180deg, #586E5C 0%, #4a6357 60%, #41545b 100%);
+    color: #fff;
+    border: none; /* coins pleins */
+    border-radius: 0; /* coins pleins */
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+    padding: 32px 24px;
+    margin: 0;
+    max-width: none;
+    min-height: 100vh;
+    width: 100vw;
+    font-family: 'Schoolbell', cursive;
+    box-sizing: border-box;
+}

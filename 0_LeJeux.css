@@ -4,22 +4,13 @@
   font-weight: normal;
   font-style: normal;
 }
-
-
-main {
-    background: linear-gradient(180deg, #586E5C 0%, #4a6357 60%, #41545b 100%);
-    color: #fff;
-    border: none; /* coins pleins */
-    border-radius: 0; /* coins pleins */
-    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
-    padding: 32px 24px;
-    margin: 0;
-    max-width: none;
-    min-height: 100vh;
-    width: 100vw;
-    font-family: 'Schoolbell', cursive;
-    box-sizing: border-box;
+@font-face {
+  font-family: 'Jua';
+  src: url('asset/fonts/Jua-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
+
 
 .Jeux_TexteCentrale {
     z-index: 1000;
@@ -166,39 +157,42 @@ body {
 
 .decorations span {
   position: absolute;
-  font-size: 8.5em;
+  font-size: 8em;
   font-weight: bold;
   opacity: 0.40; /* Plus visible qu’avant */
   user-select: none;
+  /* font-family: Jua, sans-serif; */
 }
 
 .red { color: red; }
 .green { color: #0e350b; }
 /* Placement espacé (évite les superpositions et le centre) */
-.decorations span:nth-child(1) { top: 1%; left: 40%; }
-.decorations span:nth-child(2) { top: 8%; left: 30%; }
-.decorations span:nth-child(3) { top: 5%; left: 18%; }
-.decorations span:nth-child(4) { top: 30%; left: 10%; }
-.decorations span:nth-child(5) { top: 35%; left: 22%; }
+.decorations span:nth-child(1) { top: 01%; left: 40%; font-size: 11em;}
+.decorations span:nth-child(2) { top: 08%; left: 30%; font-size: 9em;}
+.decorations span:nth-child(3) { top: 05%; left: 18%; font-size: 10em;}
+.decorations span:nth-child(4) { top: 30%; left: 10%; font-size: 11em;}
+.decorations span:nth-child(5) { top: 35%; left: 22%; font-size: 7em;}
 
-.decorations span:nth-child(6)  { top: 4%; right: 45%; }
-.decorations span:nth-child(7)  { top: 12%; right: 30%; }
-.decorations span:nth-child(8)  { top: 20%; right: 20%; }
-.decorations span:nth-child(9)  { top: 7%; right: 10%; }
-.decorations span:nth-child(10) { top: 30%; right: 10%; }
+.decorations span:nth-child(6)  { top: 04%; right: 45%; font-size: 7em;}
+.decorations span:nth-child(7)  { top: 12%; right: 30%; font-size: 9em;}
+.decorations span:nth-child(8)  { top: 20%; right: 20%; font-size: 10em;}
+.decorations span:nth-child(9)  { top: 07%; right: 10%; font-size: 11em;}
+.decorations span:nth-child(10) { top: 30%; right: 10%; font-size: 13em;}
 
-.decorations span:nth-child(11) { bottom: 75%; left: 6%; }
-.decorations span:nth-child(12) { bottom: 25%; left: 12%; }
-.decorations span:nth-child(13) { bottom: 30%; left: 30%; }
-.decorations span:nth-child(14) { bottom: 12%; left: 26%; }
-.decorations span:nth-child(15) { bottom: 2%; left: 42%; }
+.decorations span:nth-child(11) { bottom: 75%; left: 06%; font-size: 7em;}
+.decorations span:nth-child(12) { bottom: 25%; left: 12%; font-size: 9em;}
+.decorations span:nth-child(13) { bottom: 30%; left: 30%; font-size: 7em;}
+.decorations span:nth-child(14) { bottom: 12%; left: 26%; font-size: 11em;}
+.decorations span:nth-child(15) { bottom: 02%; left: 42%; font-size: 7em;}
+.decorations span:nth-child(22) { bottom: 02%; left: 07%; font-size: 10em;}
 
-.decorations span:nth-child(16) { bottom: 4%; right: 45%; }
-.decorations span:nth-child(17) { bottom: 24%; right: 38%; }
-.decorations span:nth-child(18) { bottom: 30%; right: 30%; }
-.decorations span:nth-child(19) { bottom: 4%; right: 8%; }
-.decorations span:nth-child(20) { bottom: 23%; right: 12%; }
-.decorations span:nth-child(21) { bottom: 13%; right: 30%; }
+.decorations span:nth-child(16) { bottom: 04%; right: 45%; font-size: 7em;}
+.decorations span:nth-child(17) { bottom: 24%; right: 38%; font-size: 9em;}
+.decorations span:nth-child(18) { bottom: 35%; right: 25%; font-size: 10em;}
+.decorations span:nth-child(19) { bottom: 04%; right: 08%; font-size: 9em;}
+.decorations span:nth-child(20) { bottom: 23%; right: 12%; font-size: 8em;}
+.decorations span:nth-child(21) { bottom: 13%; right: 30%; font-size: 7em;}
+
 /* Contenu principal au centre */
 .contenu {
   position: relative;
