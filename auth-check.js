@@ -125,24 +125,25 @@ function addLogoutButton(containerId = 'logout-container') {
     const logoutBtn = document.createElement('button');
     logoutBtn.textContent = 'Se déconnecter';
     logoutBtn.className = 'logout-btn';
-    logoutBtn.style.cssText = `
-        background: #e74c3c;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 14px;
-        margin: 10px 0;
-        transition: background 0.3s ease;
-    `;
+logoutBtn.style.cssText = `
+    background: transparent;
+    color: #000000ff;
+    padding: 2px 4px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 13px;
+    margin: 0;
+    font-weight: bold;
+    transition: background 0.3s ease;
+`;
     
     logoutBtn.addEventListener('click', logoutFromProtectedPage);
     logoutBtn.addEventListener('mouseover', function() {
-        this.style.background = '#c0392b';
+        this.style.background = '#bebebeff';
     });
     logoutBtn.addEventListener('mouseout', function() {
-        this.style.background = '#e74c3c';
+        this.style.background = '#41545b02';
     });
     
     container.appendChild(logoutBtn);

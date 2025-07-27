@@ -2,21 +2,69 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le Jeu</title>
     <!-- IMPORTANT: Inclure le script de protection -->
     <script src="auth-check.js"></script>
+    <link rel="stylesheet" href="All.css">
+    <link rel="stylesheet" href="0_LeJeux.css">
 </head>
 <body>
-    <h1>Bienvenue dans le jeu !</h1>
-    <!-- Votre contenu de jeu ici -->
-    
-    <div id="logout-container"></div>
-    
+    <div class="decorations">
+        <span class="red">?</span>
+        <span class="green">?</span>
+        <span class="red">?</span>
+        <span class="red">?</span>
+        <span class="green">?</span>
+
+        <span class="green">?</span>
+        <span class="red">?</span>
+        <span class="green">?</span>
+        <span class="red">?</span>
+        <span class="green">?</span>
+
+        <span class="green">?</span>
+        <span class="red">?</span>
+        <span class="red">?</span>
+        <span class="green">?</span>
+        <span class="green">?</span>
+        
+        <span class="red">?</span>
+        <span class="green">?</span>
+        <span class="red">?</span>
+        <span class="green">?</span>
+        <span class="red">?</span>
+        <span class="green">?</span>
+    </div>
+    <main>
+        <div id="logout-container"></div> 
+        <div class="Jeux_TexteCentrale">
+            <p style="color: #a1a1a1; font-size: 3em">Le jeu de la scolarité</p>
+            <p style="font-weight: bold; font-size: 9em"; >QUESTIONS</p>
+            <div style="color: #585858; font-size: 2em"> 
+                <p>Stream For Love</p>
+            </div>
+            <br><br><br><br><br><br>
+            <div class="game-container">
+                <button class="start-button" onclick="startGame()">
+                    <span class="button-text">📚 Démarrer</span>
+                    <div class="chalk-effect"></div>
+                </button>
+            </div>
+        </div>
+        
+    </main>
     <script>
         // Ajouter un bouton de déconnexion
         document.addEventListener('DOMContentLoaded', function() {
             addLogoutButton('logout-container');
         });
+
+        // Fonction pour démarrer le jeu - redirige vers une autre page
+        function startGame() {
+            // Redirection vers la page de jeu
+            window.location.href = 'jeu.html';
+        }
     </script>
 </body>
 </html>
