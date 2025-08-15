@@ -1,5 +1,3 @@
-
-
 .Jeux_TexteCentrale {
     z-index: 1000;
     position: absolute;
@@ -155,31 +153,31 @@ body {
 .red { color: red; }
 .green { color: #0e350b; }
 /* Placement espacé (évite les superpositions et le centre) */
-.decorations span:nth-child(1) { top: 01%; left: 40%; font-size: 11em;}
-.decorations span:nth-child(2) { top: 08%; left: 30%; font-size: 9em;}
-.decorations span:nth-child(3) { top: 05%; left: 18%; font-size: 10em;}
-.decorations span:nth-child(4) { top: 30%; left: 10%; font-size: 11em;}
-.decorations span:nth-child(5) { top: 35%; left: 22%; font-size: 7em;}
+.decorations span:nth-child(1) { top: 01%; left: 40%; font-size: 10em;}
+.decorations span:nth-child(2) { top: 08%; left: 30%; font-size: 8em;}
+.decorations span:nth-child(3) { top: 05%; left: 18%; font-size: 9em;}
+.decorations span:nth-child(4) { top: 30%; left: 10%; font-size: 10em;}
+.decorations span:nth-child(5) { top: 35%; left: 22%; font-size: 6em;}
 
-.decorations span:nth-child(6)  { top: 04%; right: 45%; font-size: 7em;}
-.decorations span:nth-child(7)  { top: 12%; right: 30%; font-size: 9em;}
-.decorations span:nth-child(8)  { top: 20%; right: 20%; font-size: 10em;}
-.decorations span:nth-child(9)  { top: 07%; right: 10%; font-size: 11em;}
-.decorations span:nth-child(10) { top: 30%; right: 10%; font-size: 13em;}
+.decorations span:nth-child(6)  { top: 04%; right: 45%; font-size: 6em;}
+.decorations span:nth-child(7)  { top: 12%; right: 30%; font-size: 8em;}
+.decorations span:nth-child(8)  { top: 20%; right: 20%; font-size: 9em;}
+.decorations span:nth-child(9)  { top: 07%; right: 10%; font-size: 10em;}
+.decorations span:nth-child(10) { top: 30%; right: 10%; font-size: 12em;}
 
-.decorations span:nth-child(11) { bottom: 75%; left: 06%; font-size: 7em;}
-.decorations span:nth-child(12) { bottom: 25%; left: 12%; font-size: 9em;}
-.decorations span:nth-child(13) { bottom: 30%; left: 30%; font-size: 7em;}
-.decorations span:nth-child(14) { bottom: 12%; left: 26%; font-size: 9em;}
-.decorations span:nth-child(15) { bottom: 02%; left: 42%; font-size: 7em;}
-.decorations span:nth-child(22) { bottom: 02%; left: 07%; font-size: 10em;}
+.decorations span:nth-child(11) { bottom: 75%; left: 06%; font-size: 6em;}
+.decorations span:nth-child(12) { bottom: 25%; left: 12%; font-size: 8em;}
+.decorations span:nth-child(13) { bottom: 30%; left: 30%; font-size: 6em;}
+.decorations span:nth-child(14) { bottom: 12%; left: 26%; font-size: 8em;}
+.decorations span:nth-child(15) { bottom: 02%; left: 42%; font-size: 6em;}
+.decorations span:nth-child(22) { bottom: 02%; left: 07%; font-size: 9em;}
 
-.decorations span:nth-child(16) { bottom: 04%; right: 45%; font-size: 7em;}
-.decorations span:nth-child(17) { bottom: 24%; right: 34%; font-size: 9em;}
-.decorations span:nth-child(18) { bottom: 35%; right: 20%; font-size: 10em;}
-.decorations span:nth-child(19) { bottom: 04%; right: 08%; font-size: 9em;}
-.decorations span:nth-child(20) { bottom: 23%; right: 12%; font-size: 8em;}
-.decorations span:nth-child(21) { bottom: 13%; right: 30%; font-size: 7em;}
+.decorations span:nth-child(16) { bottom: 04%; right: 45%; font-size: 6em;}
+.decorations span:nth-child(17) { bottom: 24%; right: 34%; font-size: 8em;}
+.decorations span:nth-child(18) { bottom: 35%; right: 20%; font-size: 9em;}
+.decorations span:nth-child(19) { bottom: 04%; right: 08%; font-size: 8em;}
+.decorations span:nth-child(20) { bottom: 23%; right: 12%; font-size: 7em;}
+.decorations span:nth-child(21) { bottom: 13%; right: 30%; font-size: 6em;}
 
 /* Contenu principal au centre */
 .contenu {
