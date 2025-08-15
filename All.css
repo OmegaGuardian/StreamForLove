@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'Schoolbell';
+  src: url('asset/fonts/Schoolbell-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Jua';
+  src: url('asset/fonts/Jua-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 header {
   background-color: #222;
   color: #fff;
