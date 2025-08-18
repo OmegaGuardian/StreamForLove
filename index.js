@@ -1,11 +1,11 @@
 // Configuration - Hash SHA-256 des identifiants
-const VALID_USERNAME_HASH = "8a5d3f9e2c4b7a1d6e8f9c0b3a2d5e7f8b1c4d6e9f2a5b8c1d4e7f0a3b6c9d2e5f8";
-const VALID_PASSWORD_HASH = "b7f2e9d4c1a8e5f2b9c6d3a0e7f4b1c8e5f2b9c6d3a0e7f4b1c8e5f2b9c6d3a0e7f4";
+const VALID_USERNAME_HASH = "d2aec61d2aa1d9b2baa5e20d5ecc24601065a00ffac4319183af560e877891eb";
+const VALID_PASSWORD_HASH = "c91745e81818bad9305f35209536ba566f2c74d72658bc090ac4f999bdc096f0";
 
 // NOTE: En production, remplacez ces hash par les vrais hash générés
 
-// Durée de session (en millisecondes) - 12 heures
-const SESSION_DURATION = 12 * 60 * 60 * 1000;
+// Durée de session (en millisecondes)
+const SESSION_DURATION = 24 * 60 * 60 * 1000; // 24 heures
 
 /**
  * Vérifier si l'utilisateur est déjà connecté
@@ -13,17 +13,8 @@ const SESSION_DURATION = 12 * 60 * 60 * 1000;
 function checkAuth() {
     const isLoggedIn = localStorage.getItem('isAuthenticated') === 'true';
     if (isLoggedIn) {
-        // Vérifier s'il y a une page de retour sauvegardée
-        const returnUrl = localStorage.getItem('returnUrl');
-        
-        if (returnUrl && returnUrl !== '/' && !returnUrl.endsWith('index.html')) {
-            // Supprimer l'URL de retour et rediriger vers cette page
-            localStorage.removeItem('returnUrl');
-            window.location.href = returnUrl;
-        } else {
-            // Redirection par défaut vers la page du jeu
-            window.location.href = '0_LeJeux.html';
-        }
+        // Si déjà connecté, rediriger vers le jeu
+        window.location.href = '0_LeJeux.html';
         return true;
     }
     return false;
@@ -61,18 +52,8 @@ async function login(username, password) {
             localStorage.setItem('loginTime', Date.now().toString());
             localStorage.setItem('username', username); // On peut stocker le nom en clair pour l'affichage
             
-            // Vérifier s'il y a une page de retour sauvegardée
-            const returnUrl = localStorage.getItem('returnUrl');
-            
-            if (returnUrl && returnUrl !== '/' && !returnUrl.endsWith('index.html')) {
-                // Supprimer l'URL de retour et rediriger vers cette page
-                localStorage.removeItem('returnUrl');
-                window.location.href = returnUrl;
-            } else {
-                // Redirection par défaut vers la page du jeu
-                window.location.href = '0_LeJeux.html';
-            }
-            
+            // Redirection vers la page du jeu
+            window.location.href = '0_LeJeux.html';
             return true;
         }
         return false;
