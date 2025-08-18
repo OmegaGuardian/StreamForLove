@@ -4,8 +4,8 @@ const VALID_PASSWORD_HASH = "b7f2e9d4c1a8e5f2b9c6d3a0e7f4b1c8e5f2b9c6d3a0e7f4b1c
 
 // NOTE: En production, remplacez ces hash par les vrais hash générés
 
-// Durée de session (en millisecondes)
-const SESSION_DURATION = 24 * 60 * 60 * 1000; // 24 heures
+// Durée de session (en millisecondes) - 12 heures
+const SESSION_DURATION = 12 * 60 * 60 * 1000;
 
 /**
  * Vérifier si l'utilisateur est déjà connecté

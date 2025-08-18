@@ -139,6 +139,8 @@ body {
   height: 100%;
   z-index: 0;
   pointer-events: none;
+  font-family: "Roboto";
+  font-style: normal;
 }
 
 .decorations span {
@@ -177,7 +179,7 @@ body {
 .decorations span:nth-child(18) { bottom: 35%; right: 20%; font-size: 9em;}
 .decorations span:nth-child(19) { bottom: 04%; right: 08%; font-size: 8em;}
 .decorations span:nth-child(20) { bottom: 23%; right: 12%; font-size: 7em;}
-.decorations span:nth-child(21) { bottom: 13%; right: 30%; font-size: 6em;}
+.decorations span:nth-child(21) { bottom: 13%; right: 25%; font-size: 6em;}
 
 /* Contenu principal au centre */
 .contenu {

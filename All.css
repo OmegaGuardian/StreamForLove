@@ -25,7 +25,7 @@ header {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto";
+  font-family: "Schoolbell";
   font-style: normal;
   font-size: 1.2em;
   
@@ -47,11 +47,11 @@ main {
 
 .background-back {
   background: radial-gradient(circle, 
-    #23452c,   /* centre */
-    #23452c,
-    #41584a 90%,
-    #4f6358 95%,
-    #596c66 100%,
+    rgb(65, 84, 91), /* centre */
+    
+    
+    rgb(76, 97, 104) 95%,
+    rgb(79, 98, 105) 100%,
     #536b53  /* bordure extérieure */
   );
   z-index: -10;
@@ -101,7 +101,7 @@ main {
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #ffffff;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Schoolbell', sans-serif;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   transform: rotate(-0.5deg);
   transition: all 0.3s ease;

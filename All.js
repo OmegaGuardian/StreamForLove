@@ -59,11 +59,11 @@
         const width = canvas.width;
         const height = canvas.height;
 
-        const mainGreen = [35, 69, 44];
+        const mainGreen = [65, 84, 91];
         const variants = [
             [65, 84, 91],
-            [31, 67, 41],
-            [53, 82, 57]
+            [65, 84, 91],
+            [90, 110, 115],
         ];
 
         const imageData = ctx.createImageData(width, height);
