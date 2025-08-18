@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Test des chemins</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .debug-info {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 4px solid #17a2b8;
+        }
+        .path-test {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 3px;
+            margin: 5px 0;
+            font-family: monospace;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Diagnostic des chemins de redirection</h1>
+        <p>Cette page vous aide à diagnostiquer pourquoi les redirections ne fonctionnent pas correctement.</p>
+        
+        <button onclick="analyzeCurrentLocation()">Analyser la position actuelle</button>
+        <button onclick="testRedirections()">Tester les redirections</button>
+        <button onclick="clearDebugInfo()">Effacer</button>
+        
+        <div id="debugOutput"></div>
+    </div>
+
+    <script>
+        function analyzeCurrentLocation() {
+            const output = document.getElementById('debugOutput');
+            
+            const info = `
+                <div class="debug-info">
+                    <h3>📍 Informations de localisation actuelle</h3>
+                    <div class="path-test"><strong>URL complète:</strong> ${window.location.href}</div>
+                    <div class="path-test"><strong>Protocole:</strong> ${window.location.protocol}</div>
+                    <div class="path-test"><strong>Hostname:</strong> ${window.location.hostname}</div>
+                    <div class="path-test"><strong>Port:</strong> ${window.location.port || 'défaut'}</div>
+                    <div class="path-test"><strong>Pathname:</strong> ${window.location.pathname}</div>
+                    <div class="path-test"><strong>Hash:</strong> ${window.location.hash || 'aucun'}</div>
+                    <div class="path-test"><strong>Search:</strong> ${window.location.search || 'aucun'}</div>
+                </div>
+            `;
+            
+            output.innerHTML = info;
+        }
+
+        function getSiteRoot() {
+            const location = window.location;
+            
+            // Pour GitHub Pages
+            if (location.hostname.includes('github.io')) {
+                const pathParts = location.pathname.split('/').filter(part => part !== '');
+                if (pathParts.length > 0) {
+                    return `${location.protocol}//${location.hostname}/${pathParts[0]}/`;
+                }
+                return `${location.protocol}//${location.hostname}/`;
+            }
+            
+            // Pour serveur local ou autre domaine
+            return `${location.protocol}//${location.hostname}${location.port ? ':' + location.port : ''}/`;
+        }
+
+        function getLoginPagePath() {
+            return getSiteRoot() + 'index.html';
+        }
+
+        function getLoginPagePathRelative() {
+            const currentPath = window.location.pathname;
+            
+            let pathParts = currentPath.split('/').filter(part => part !== '');
+            
+            // Retirer le fichier HTML si présent
+            if (pathParts.length > 0 && pathParts[pathParts.length - 1].includes('.html')) {
+                pathParts.pop();
+            }
+            
+            // Pour GitHub Pages, ignorer le nom du repository (première partie)
+            if (window.location.hostname.includes('github.io') && pathParts.length > 1) {
+                pathParts = pathParts.slice(1);
+            }
+            
+            const levelsUp = pathParts.length;
+            return levelsUp > 0 ? '../'.repeat(levelsUp) + 'index.html' : './index.html';
+        }
+
+        function testRedirections() {
+            const output = document.getElementById('debugOutput');
+            
+            const currentPath = window.location.pathname;
+            const pathParts = currentPath.split('/').filter(part => part !== '');
+            const siteRoot = getSiteRoot();
+            const absolutePath = getLoginPagePath();
+            const relativePath = getLoginPagePathRelative();
+            
+            const info = `
+                <div class="debug-info">
+                    <h3>🧪 Test des chemins de redirection</h3>
+                    
+                    <h4>Analyse du chemin actuel:</h4>
+                    <div class="path-test"><strong>Chemin complet:</strong> ${currentPath}</div>
+                    <div class="path-test"><strong>Parties du chemin:</strong> [${pathParts.join(', ')}]</div>
+                    <div class="path-test"><strong>Nombre de niveaux:</strong> ${pathParts.length}</div>
+                    
+                    <h4>Racine du site détectée:</h4>
+                    <div class="path-test"><strong>Site root:</strong> ${siteRoot}</div>
+                    
+                    <h4>Chemins de redirection calculés:</h4>
+                    <div class="path-test"><strong>Chemin absolu:</strong> ${absolutePath}</div>
+                    <div class="path-test"><strong>Chemin relatif:</strong> ${relativePath}</div>
+                    
+                    <h4>Tests de validation:</h4>
+                    <div class="path-test">
+                        <strong>GitHub Pages détecté:</strong> 
+                        <span class="${window.location.hostname.includes('github.io') ? 'success' : 'error'}">
+                            ${window.location.hostname.includes('github.io') ? 'OUI' : 'NON'}
+                        </span>
+                    </div>
+                    <div class="path-test">
+                        <strong>Protocole file:// détecté:</strong> 
+                        <span class="${window.location.protocol === 'file:' ? 'error' : 'success'}">
+                            ${window.location.protocol === 'file:' ? 'OUI (problématique)' : 'NON (bon)'}
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="debug-info">
+                    <h3>🚀 Actions de test</h3>
+                    <button onclick="testAbsoluteRedirect()">Tester redirection absolue</button>
+                    <button onclick="testRelativeRedirect()">Tester redirection relative</button>
+                    <p><small>⚠️ Ces boutons vous redirigeront vers index.html si il existe</small></p>
+                </div>
+            `;
+            
+            output.innerHTML = info;
+        }
+
+        function testAbsoluteRedirect() {
+            const path = getLoginPagePath();
+            console.log('Test redirection absolue vers:', path);
+            alert(`Test redirection absolue vers: ${path}`);
+            // Décommentez la ligne suivante pour tester vraiment
+            // window.location.href = path;
+        }
+
+        function testRelativeRedirect() {
+            const path = getLoginPagePathRelative();
+            console.log('Test redirection relative vers:', path);
+            alert(`Test redirection relative vers: ${path}`);
+            // Décommentez la ligne suivante pour tester vraiment
+            // window.location.href = path;
+        }
+
+        function clearDebugInfo() {
+            document.getElementById('debugOutput').innerHTML = '';
+        }
+
+        // Analyse automatique au chargement
+        window.addEventListener('load', function() {
+            analyzeCurrentLocation();
+        });
+    </script>
+</body>
+</html>

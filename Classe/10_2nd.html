@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>LeJeuxDeLaScolarité</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="All.css">
+    <link rel="stylesheet" href="01_CP.css">
+    <!-- IMPORTANT: Inclure le script de protection -->
+    <script src="auth-check.js"></script>
+</head>
+<body>
+    <div class="retour-button">
+        <a href="01_Sommaire.html">Retour</a>
+    </div>
+    <main>
+
+
+
+        
+    </main>
+    <script src="All.js"></script>
+    <script>
+        document.querySelectorAll('.pulse[data-link]').forEach(el => {
+            el.style.cursor = "pointer";
+            el.addEventListener('click', function() {
+                window.location.href = el.getAttribute('data-link');
+            });
+        });
+    </script>
+</body>
+</html>

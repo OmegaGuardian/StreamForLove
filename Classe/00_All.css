@@ -1,0 +1,26 @@
+.SomFlexContainer {
+  display: flex;
+  height: 90vh;              /* hauteur totale de la page */
+  width: 91%;                /* Largeur réduite de 15% */
+  margin-right: 8%;         /* Décale le container vers la gauche */
+}
+
+.SomFlexContainer .col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;                   /* chaque colonne prend une fraction égale */
+  margin: 0 25px;             /* marge interne à la colonne */
+  justify-content: space-around;
+  border: 1px solid #ccc; /* bordure pour visualiser les colonnes */
+}
+
+
+.SomFlexContainer .col span {
+  color: black;
+  display: flex;
+  align-items: center;        /* centre verticalement */
+  justify-content: center;    /* centre horizontalement */
+  font-size: 2em;
+  height: 25vh;
+  background-color: #f9e7b9;
+}
