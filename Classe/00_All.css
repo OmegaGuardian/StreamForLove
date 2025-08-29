@@ -1,26 +1,32 @@
 .SomFlexContainer {
   display: flex;
-  height: 90vh;              /* hauteur totale de la page */
-  width: 91%;                /* Largeur réduite de 15% */
-  margin-right: 8%;         /* Décale le container vers la gauche */
+  height: 96vh;              /*hauteur totale de la page */
+  width: 100wh;                /* Largeur réduite de 15% */
+  /*margin-right: 1%;          Décale le container vers la gauche */
+  /* border: 1px solid #2c05d8; */
+  padding: 15px;
 }
 
 .SomFlexContainer .col {
   display: flex;
   flex-direction: column;
   flex: 1;                   /* chaque colonne prend une fraction égale */
-  margin: 0 25px;             /* marge interne à la colonne */
+  margin: 0 20px;             /* marge interne à la colonne */
   justify-content: space-around;
-  border: 1px solid #ccc; /* bordure pour visualiser les colonnes */
+  /* border: 1px solid #ccc; */
 }
-
 
 .SomFlexContainer .col span {
   color: black;
   display: flex;
   align-items: center;        /* centre verticalement */
   justify-content: center;    /* centre horizontalement */
+  text-align: center;    /* sécurité si texte sur plusieurs lignes */
   font-size: 2em;
-  height: 25vh;
   background-color: #f9e7b9;
+  height: 25vh;             /* hauteur de chaque case */
+  max-width: 300px;          /* largeur maximale de chaque case */
+  width: 100%; 
+  margin: 0 auto;            /* centre la case si < 100% */
+  
 }

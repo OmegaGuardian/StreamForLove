@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <title>LeJeuxDeLaScolarité</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="All.css">
-    <link rel="stylesheet" href="01_CP.css">
-    <!-- IMPORTANT: Inclure le script de protection -->
-    <script src="auth-check.js"></script>
-</head>
-<body>
-    <div class="retour-button">
-        <a href="01_Sommaire.html">Retour</a>
-    </div>
-    <main>
-
-
-
-        
-    </main>
-    <script src="All.js"></script>
-    <script>
-        document.querySelectorAll('.pulse[data-link]').forEach(el => {
-            el.style.cursor = "pointer";
-            el.addEventListener('click', function() {
-                window.location.href = el.getAttribute('data-link');
-            });
-        });
-    </script>
-</body>
+	<head>
+		<title>LeJeuxDeLaScolarité</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../All.css" />
+		<link rel="stylesheet" href="00_All.css" />
+		<link rel="stylesheet" href="02_CE1.css" />
+		<!-- IMPORTANT: Inclure le script de protection -->
+		<script src="../auth-check.js"></script>
+	</head>
+	<body class="background-back">
+		<div class="retour-button">
+			<a href="../01_Sommaire.html">Retour</a>
+		</div>
+		<main>
+			<div class="SomFlexContainer">
+				<div class="col">
+					<span data-link="">Anglais</span>
+					<span data-link="">Maths</span>
+				</div>
+				<div class="col">
+					<span data-link="">Français</span>
+					<span data-link="">Histoire</span>
+				</div>
+				<div class="col">
+					<span data-link="">Découvrir le<br> monde</span>
+					<span data-link="">Questionner le<br> monde</span>
+				</div>
+				<div class="col">
+					<span data-link="">Arts, musiques <br>et cultures</span>
+                    <span data-link="">Sciences et <br>technologie</span>
+				</div>
+                <div class="col">
+					<span data-link="">Sport</span>
+				</div>
+			</div>
+		</main>
+		<script src="00_All-JS.js"></script>
+		<script src="../All.js"></script>
+	</body>
 </html>
