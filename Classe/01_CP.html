@@ -11,27 +11,165 @@
 		<script src="../auth-check.js"></script>
 	</head>
 	<body class="background-back">
-		<div class="retour-button">
-			<a href="../01_Sommaire.html">Retour</a>
-		</div>
 		<main>
-			<div class="SomFlexContainer">
-				<div class="col">
-					<span data-link="">Anglais</span>
-					<span data-link="">Maths</span>
-				</div>
-				<div class="col">
-					<span data-link="">Français</span>
-					<span data-link="">Histoire</span>
-				</div>
-				<div class="col">
-					<span data-link="">Découvrir le<br> monde</span>
-					<span data-link="">Questionner le<br> monde</span>
-				</div>
-				<div class="col">
-					<span data-link="">Sport</span>
+			<div class="contenu actif" id="cat_matiere">
+				<div class="SomFlexContainer">
+					<div class="retour-button">
+						<a href="../01_Sommaire.html">Retour</a>
+					</div>
+					<div class="col">
+						<span class="bouton" onclick="toggleCategorie('cat_ang_quest')" role="button" tabindex="0">Anglais</span>
+						<span class="bouton" onclick="toggleCategorie('cat_math_quest')" role="button" tabindex="0">Mathématique</span>
+					</div>
+					<div class="col">
+						<span class="bouton" onclick="toggleCategorie('cat_fr_quest')" role="button" tabindex="0">Français</span>
+						<span class="bouton" onclick="toggleCategorie('cat_hist_quest')" role="button" tabindex="0">Histoire</span>
+					</div>
+					<div class="col">
+						<span class="bouton" onclick="toggleCategorie('cat_dlm_quest')" role="button" tabindex="0">Découvrir le<br> monde</span>
+						<span class="bouton" onclick="toggleCategorie('cat_qlm_quest')" role="button" tabindex="0">Questionner le<br> monde</span>
+					</div>
+					<div class="col">
+						<span class="bouton" onclick="toggleCategorie('cat_sport_quest')" role="button" tabindex="0">Sport</span>
+					</div>
 				</div>
 			</div>
+			<!-- Catégorie Anglais -->
+			<div class="contenu" id="cat_ang_quest">
+				<div class="retour-button">
+        			<a class="bouton" onclick="toggleCategorie('cat_matiere')" role="button" tabindex="0">Retour</a>
+    			</div>
+				<div class="MainContenainer">
+					<div class="TopLine"><span class="Matiere">Anglais</span></div>
+					<div class="SomFlexContainerQuestions">
+						<div class="col">
+							<span class="bouton" onclick="toggleCategorie('cat_ang_quest_1')" role="button" tabindex="0">Question 1</span>
+							<span class="bouton" onclick="toggleCategorie('cat_ang_quest_2')" role="button" tabindex="0">Question 2</span>
+						</div>
+						<div class="col">
+							<span class="bouton" onclick="toggleCategorie('cat_ang_quest_3')" role="button" tabindex="0">Question 3</span>
+							<span class="bouton" onclick="toggleCategorie('cat_ang_quest_4')" role="button" tabindex="0">Question 4</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Catégorie Maths -->
+			<div class="contenu" id="cat_math_quest">
+				<div class="retour-button">
+					<a class="bouton" onclick="toggleCategorie('cat_matiere')" role="button" tabindex="0">Retour</a>
+				</div>
+				<div class="MainContenainer">
+					<div class="TopLine"><span class="Matiere">Maths</span></div>
+					<div class="SomFlexContainerQuestions">
+						<div class="col">
+							<span class="bouton" onclick="toggleCategorie('cat_math_quest_1')" role="button" tabindex="0">Question 1</span>
+							<span class="bouton" onclick="toggleCategorie('cat_math_quest_2')" role="button" tabindex="0">Question 2</span>
+						</div>
+						<div class="col">
+							<span class="bouton" onclick="toggleCategorie('cat_math_quest_3')" role="button" tabindex="0">Question 3</span>
+							<span class="bouton" onclick="toggleCategorie('cat_math_quest_4')" role="button" tabindex="0">Question 4</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Catégorie Français -->
+			<div class="contenu" id="cat_fr_quest">
+				<div class="retour-button">
+					<a class="bouton" onclick="toggleCategorie('cat_matiere')" role="button" tabindex="0">Retour</a>
+				</div>
+				<div class="MainContenainer">
+					<div class="TopLine"><span class="Matiere">Français</span></div>
+					<div class="SomFlexContainerQuestions">
+						<div class="col">
+							<span class="bouton" onclick="toggleCategorie('cat_fr_quest_1')" role="button" tabindex="0">Question 1</span>
+							<span class="bouton" onclick="toggleCategorie('cat_fr_quest_2')" role="button" tabindex="0">Question 2</span>
+						</div>
+						<div class="col">
+							<span class="bouton" onclick="toggleCategorie('cat_fr_quest_3')" role="button" tabindex="0">Question 3</span>
+							<span class="bouton" onclick="toggleCategorie('cat_fr_quest_4')" role="button" tabindex="0">Question 4</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Catégorie Histoire -->
+			<div class="contenu" id="cat_hist_quest">
+				<div class="retour-button">
+					<a class="bouton" onclick="toggleCategorie('cat_matiere')" role="button" tabindex="0">Retour</a>
+				</div>
+				<div class="MainContenainer">
+					<div class="TopLine"><span class="Matiere">Histoire</span></div>
+					<div class="SomFlexContainerQuestions">
+						<div class="col">
+							<span class="bouton" onclick="toggleCategorie('cat_hist_quest_1')" role="button" tabindex="0">Question 1</span>
+							<span class="bouton" onclick="toggleCategorie('cat_hist_quest_2')" role="button" tabindex="0">Question 2</span>
+						</div>
+						<div class="col">
+							<span class="bouton" onclick="toggleCategorie('cat_hist_quest_3')" role="button" tabindex="0">Question 3</span>
+							<span class="bouton" onclick="toggleCategorie('cat_hist_quest_4')" role="button" tabindex="0">Question 4</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Catégorie Découvrir le monde -->
+			<div class="contenu" id="cat_dlm_quest">
+				<div class="retour-button">
+					<a class="bouton" onclick="toggleCategorie('cat_matiere')" role="button" tabindex="0">Retour</a>
+				</div>
+				<div class="MainContenainer">
+					<div class="TopLine"><span class="Matiere">Découvrir le monde</span></div>
+					<div class="SomFlexContainerQuestions">
+						<div class="col">
+							<span class="bouton" onclick="toggleCategorie('cat_dlm_quest_1')" role="button" tabindex="0">Question 1</span>
+							<span class="bouton" onclick="toggleCategorie('cat_dlm_quest_2')" role="button" tabindex="0">Question 2</span>
+						</div>
+						<div class="col">
+							<span class="bouton" onclick="toggleCategorie('cat_dlm_quest_3')" role="button" tabindex="0">Question 3</span>
+							<span class="bouton" onclick="toggleCategorie('cat_dlm_quest_4')" role="button" tabindex="0">Question 4</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Catégorie Questionner le monde -->
+			<div class="contenu" id="cat_qlm_quest">
+				<div class="retour-button">
+					<a class="bouton" onclick="toggleCategorie('cat_matiere')" role="button" tabindex="0">Retour</a>
+				</div>
+				<div class="MainContenainer">
+					<div class="TopLine"><span class="Matiere">Questionner le monde</span></div>
+					<div class="SomFlexContainerQuestions">
+						<div class="col">
+							<span class="bouton" onclick="toggleCategorie('cat_qlm_quest_1')" role="button" tabindex="0">Question 1</span>
+							<span class="bouton" onclick="toggleCategorie('cat_qlm_quest_2')" role="button" tabindex="0">Question 2</span>
+						</div>
+						<div class="col">
+							<span class="bouton" onclick="toggleCategorie('cat_qlm_quest_3')" role="button" tabindex="0">Question 3</span>
+							<span class="bouton" onclick="toggleCategorie('cat_qlm_quest_4')" role="button" tabindex="0">Question 4</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Catégorie Sport -->
+			<div class="contenu" id="cat_sport_quest">
+				<div class="retour-button">
+					<a class="bouton" onclick="toggleCategorie('cat_matiere')" role="button" tabindex="0">Retour</a>
+				</div>
+				<div class="MainContenainer">
+					<div class="TopLine"><span class="Matiere">Sport</span></div>
+					<div class="SomFlexContainerQuestions">
+						<div class="col">
+							<span class="bouton" onclick="toggleCategorie('cat_sport_quest_1')" role="button" tabindex="0">Question 1</span>
+							<span class="bouton" onclick="toggleCategorie('cat_sport_quest_2')" role="button" tabindex="0">Question 2</span>
+						</div>
+						<div class="col">
+							<span class="bouton" onclick="toggleCategorie('cat_sport_quest_3')" role="button" tabindex="0">Question 3</span>
+							<span class="bouton" onclick="toggleCategorie('cat_sport_quest_4')" role="button" tabindex="0">Question 4</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Questions pour chaque matière -->
+			<!-- Question Anglais--> 
+
 		</main>
 		<script src="00_All-JS.js"></script>
 		<script src="../All.js"></script>

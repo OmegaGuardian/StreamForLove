@@ -1,9 +1,7 @@
 .SomFlexContainer {
   display: flex;
-  height: 96vh;              /*hauteur totale de la page */
-  width: 100wh;                /* Largeur réduite de 15% */
-  /*margin-right: 1%;          Décale le container vers la gauche */
-  /* border: 1px solid #2c05d8; */
+  height: 95vh;              /*hauteur totale de la page */
+  width: 98vw;                /* Largeur réduite de 15% */
   padding: 15px;
 }
 
@@ -13,7 +11,6 @@
   flex: 1;                   /* chaque colonne prend une fraction égale */
   margin: 0 20px;             /* marge interne à la colonne */
   justify-content: space-around;
-  /* border: 1px solid #ccc; */
 }
 
 .SomFlexContainer .col span {
@@ -28,5 +25,160 @@
   max-width: 300px;          /* largeur maximale de chaque case */
   width: 100%; 
   margin: 0 auto;            /* centre la case si < 100% */
-  
+  border-radius: 15px; 
 }
+
+/* Style générique des "spans boutons" */
+.bouton {
+    cursor: pointer;
+    user-select: none;
+}
+
+.contenu {
+    display: none;      /* cache la catégorie */
+}
+
+.contenu.actif {
+    display: block;     /* visible */
+}
+
+/* bouton fermer dans une catégorie */
+.retour-button span {
+  display: block;
+  padding: 12px 24px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.retour-button span::before {
+  display: none;
+}
+
+.retour-button span::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -12px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 45% 55% 70% 30% / 60% 40% 60% 40%;
+  background: 
+  conic-gradient(from 0deg at 50% 50%,
+  rgba(255, 255, 255, 0.9) 0deg,
+  rgba(255, 255, 255, 0.5) 15deg,
+  rgba(255, 255, 255, 0.95) 25deg,
+  rgba(255, 255, 255, 0.6) 40deg,
+  rgba(255, 255, 255, 0.9) 55deg,
+  rgba(255, 255, 255, 0.4) 70deg,
+  rgba(255, 255, 255, 0.95) 85deg,
+  rgba(255, 255, 255, 0.7) 100deg,
+  rgba(255, 255, 255, 0.9) 115deg,
+  rgba(255, 255, 255, 0.5) 130deg,
+  rgba(255, 255, 255, 0.85) 145deg,
+  rgba(255, 255, 255, 0.6) 160deg,
+  rgba(255, 255, 255, 0.9) 175deg,
+  rgba(255, 255, 255, 0.4) 190deg,
+  rgba(255, 255, 255, 0.95) 205deg,
+  rgba(255, 255, 255, 0.7) 220deg,
+  rgba(255, 255, 255, 0.85) 235deg,
+  rgba(255, 255, 255, 0.5) 250deg,
+  rgba(255, 255, 255, 0.9) 265deg,
+  rgba(255, 255, 255, 0.6) 280deg,
+  rgba(255, 255, 255, 0.95) 295deg,
+  rgba(255, 255, 255, 0.7) 310deg,
+  rgba(255, 255, 255, 0.85) 325deg,
+  rgba(255, 255, 255, 0.5) 340deg,
+  rgba(255, 255, 255, 0.9) 360deg);
+  mask: 
+  radial-gradient(ellipse at center, transparent 60%, black 65%),
+  radial-gradient(ellipse at center, transparent 75%, black 80%);
+  mask-composite: subtract;
+  box-shadow: 
+  0 0 0 1px rgba(255, 255, 255, 0.3),
+  0 0 3px rgba(255, 255, 255, 0.2);
+  filter: 
+  drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.4))
+  drop-shadow(-1px -1px 1px rgba(255, 255, 255, 0.3));
+  transform: rotate(1deg);
+}
+
+.MainContainer {
+  display: flex;
+  flex-direction: column;    /* Empile la ligne du haut et les colonnes */
+  height: 95vh;
+  width: 98vw;
+  padding: 15px;
+  gap: 20px;                 /* Espacement entre la ligne du haut et les colonnes */
+}
+
+/* La ligne du haut */
+.TopLine {
+  display: flex;
+  justify-content: center;   /* Centre le contenu horizontalement */
+  align-items: center;       /* Centre le contenu verticalement */
+  color: black;
+  font-size: 2em;
+  height: 20vh;              /* Hauteur de la ligne du haut */
+  width: 100%;
+  text-align: center;
+}
+
+/* Vos colonnes existantes (légèrement modifiées) */
+.SomFlexContainerQuestions {
+  display: flex;
+  flex: 1;                   /* Prend le reste de l'espace disponible */
+  width: 100%;
+}
+
+.SomFlexContainerQuestions .col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;  /* Centre les éléments */
+  gap: 30px;                /* Espacement fixe entre les spans */
+  width: 0 auto;
+  height: 75vh;
+}
+
+.SomFlexContainerQuestions .col:nth-child(1) {margin: 0 20px 0 15%; /* haut, droite, bas, gauche */ }
+.SomFlexContainerQuestions .col:nth-child(2) {margin: 0 15% 0 20px; /* haut, droite, bas, gauche */ }
+
+.SomFlexContainerQuestions .col span {
+  color: black;
+  display: flex;
+  align-items: center;        /* centre verticalement */
+  justify-content: center;    /* centre horizontalement */
+  text-align: center;         /* sécurité si texte sur plusieurs lignes */
+  font-size: 2em;
+  background-color: #f9e7b9;
+  height: 25vh;               /* hauteur de chaque case */
+  width: 35vw; 
+  margin: 0 auto;             /* centre la case si < 100% */
+  cursor: pointer;            /* Indique que c'est cliquable */
+  transition: transform 0.2s; /* Animation au survol */
+  border-radius: 15px; 
+}
+
+.Matiere {
+  display: flex;                /* active Flexbox */
+  align-items: center;          /* centre verticalement */
+  justify-content: center;      /* centre horizontalement */
+  min-height: 10vh;
+  max-height: 15vh;
+  min-width: 15vw;
+  max-width: 30vw;
+  margin: 30px auto 20px auto;  /* marge haut, centrage horizontal, marge bas */
+  text-align: center;           /* sécurité si texte sur plusieurs lignes */
+  font-size: 1.25em;
+  background-color: #f9e7b9;
+  color: black;
+  padding: 0 30px;
+  border-radius: 40px; 
+}
+
