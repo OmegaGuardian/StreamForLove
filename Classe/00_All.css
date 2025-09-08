@@ -28,86 +28,6 @@
   border-radius: 15px; 
 }
 
-/* Style générique des "spans boutons" */
-.bouton {
-    cursor: pointer;
-    user-select: none;
-}
-
-.contenu {
-    display: none;      /* cache la catégorie */
-}
-
-.contenu.actif {
-    display: block;     /* visible */
-}
-
-/* bouton fermer dans une catégorie */
-.retour-button span {
-  display: block;
-  padding: 12px 24px;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: relative;
-  transition: all 0.4s ease;
-}
-
-.retour-button span::before {
-  display: none;
-}
-
-.retour-button span::after {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: -12px;
-  right: -10px;
-  bottom: -10px;
-  border-radius: 45% 55% 70% 30% / 60% 40% 60% 40%;
-  background: 
-  conic-gradient(from 0deg at 50% 50%,
-  rgba(255, 255, 255, 0.9) 0deg,
-  rgba(255, 255, 255, 0.5) 15deg,
-  rgba(255, 255, 255, 0.95) 25deg,
-  rgba(255, 255, 255, 0.6) 40deg,
-  rgba(255, 255, 255, 0.9) 55deg,
-  rgba(255, 255, 255, 0.4) 70deg,
-  rgba(255, 255, 255, 0.95) 85deg,
-  rgba(255, 255, 255, 0.7) 100deg,
-  rgba(255, 255, 255, 0.9) 115deg,
-  rgba(255, 255, 255, 0.5) 130deg,
-  rgba(255, 255, 255, 0.85) 145deg,
-  rgba(255, 255, 255, 0.6) 160deg,
-  rgba(255, 255, 255, 0.9) 175deg,
-  rgba(255, 255, 255, 0.4) 190deg,
-  rgba(255, 255, 255, 0.95) 205deg,
-  rgba(255, 255, 255, 0.7) 220deg,
-  rgba(255, 255, 255, 0.85) 235deg,
-  rgba(255, 255, 255, 0.5) 250deg,
-  rgba(255, 255, 255, 0.9) 265deg,
-  rgba(255, 255, 255, 0.6) 280deg,
-  rgba(255, 255, 255, 0.95) 295deg,
-  rgba(255, 255, 255, 0.7) 310deg,
-  rgba(255, 255, 255, 0.85) 325deg,
-  rgba(255, 255, 255, 0.5) 340deg,
-  rgba(255, 255, 255, 0.9) 360deg);
-  mask: 
-  radial-gradient(ellipse at center, transparent 60%, black 65%),
-  radial-gradient(ellipse at center, transparent 75%, black 80%);
-  mask-composite: subtract;
-  box-shadow: 
-  0 0 0 1px rgba(255, 255, 255, 0.3),
-  0 0 3px rgba(255, 255, 255, 0.2);
-  filter: 
-  drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.4))
-  drop-shadow(-1px -1px 1px rgba(255, 255, 255, 0.3));
-  transform: rotate(1deg);
-}
-
 .MainContainer {
   display: flex;
   flex-direction: column;    /* Empile la ligne du haut et les colonnes */
@@ -118,15 +38,30 @@
 }
 
 /* La ligne du haut */
-.TopLine {
+.QuestionsTopLine {
   display: flex;
   justify-content: center;   /* Centre le contenu horizontalement */
   align-items: center;       /* Centre le contenu verticalement */
   color: black;
   font-size: 2em;
-  height: 20vh;              /* Hauteur de la ligne du haut */
+  height: 15vh;              /* Hauteur de la ligne du haut */
   width: 100%;
   text-align: center;
+}
+.QuestionsTopLine .Matiere {
+  display: flex;                /* active Flexbox */
+  align-items: center;          /* centre verticalement */
+  justify-content: center;      /* centre horizontalement */
+  height: 10vh;
+  min-width: 15vw;
+  max-width: 35vw;
+  margin: 20px auto 20px auto;  /* marge haut, centrage horizontal, marge bas */
+  text-align: center;           /* sécurité si texte sur plusieurs lignes */
+  font-size: 1.25em;
+  background-color: #f9e7b9;
+  color: black;
+  padding: 0 30px;
+  border-radius: 40px; 
 }
 
 /* Vos colonnes existantes (légèrement modifiées) */
@@ -143,7 +78,7 @@
   justify-content: center;  /* Centre les éléments */
   gap: 30px;                /* Espacement fixe entre les spans */
   width: 0 auto;
-  height: 75vh;
+  height: 80vh;
 }
 
 .SomFlexContainerQuestions .col:nth-child(1) {margin: 0 20px 0 15%; /* haut, droite, bas, gauche */ }
@@ -165,20 +100,159 @@
   border-radius: 15px; 
 }
 
-.Matiere {
-  display: flex;                /* active Flexbox */
-  align-items: center;          /* centre verticalement */
-  justify-content: center;      /* centre horizontalement */
-  min-height: 10vh;
-  max-height: 15vh;
-  min-width: 15vw;
-  max-width: 30vw;
-  margin: 30px auto 20px auto;  /* marge haut, centrage horizontal, marge bas */
-  text-align: center;           /* sécurité si texte sur plusieurs lignes */
-  font-size: 1.25em;
-  background-color: #f9e7b9;
-  color: black;
-  padding: 0 30px;
-  border-radius: 40px; 
+/* Style générique des "spans boutons" */
+.bouton {
+    cursor: pointer;
+    user-select: none;
 }
 
+.contenu {
+    display: none;      /* cache la catégorie */
+}
+
+.contenu.actif {
+    display: block;     /* visible */
+}
+
+/* Overlay plein écran */
+.overlay {
+  position: fixed;       /* reste en place même au scroll */
+  top: 0;
+  left: 0;
+  width: 100vw;          /* prend toute la largeur */
+  height: 100vh;         /* prend toute la hauteur */
+  background: rgba(0, 0, 0, 0.5); /* fond semi-transparent */
+  display: none;         /* caché par défaut */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;         /* au-dessus de tout */
+}
+
+/* Quand actif */
+.overlay.actif {
+  display: flex;
+}
+
+.overlay .box {
+  color: black;
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  width: 80vw;
+  height: 70vh;
+  text-align: center;
+  position: relative; /* pour positionner la croix à l'intérieur */
+  
+  display: flex;            /* devient un conteneur flex */
+  flex-direction: column;   /* disposition verticale */
+}
+/* Style bouton rond avec croix */
+.overlay .box .close {
+  position: absolute;
+  top: -15px;   /* légèrement au-dessus du coin */
+  right: -15px; /* légèrement à droite du coin */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #222; /* cercle noir */
+  color: #fff;      /* croix blanche */
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: background 0.3s ease;
+}
+
+.overlay .box .close:hover {
+  background: #e00; /* rouge au survol */
+}
+
+.Questions, .Reponses {
+  text-align: left;
+  white-space: normal;
+  word-wrap: break-word;
+  margin: 40px 10% 40px 1vw; /* haut, droite, bas, gauche */ 
+  flex: 1 1 auto;           /* prend tout l'espace disponible */
+  border: #f9e7b9 2px solid;
+}
+
+.Questions {margin: 40px 10% 0 1vw; /* haut, droite, bas, gauche */ }
+.Reponses {
+  margin: 0 10% 40px 1vw; /* haut, droite, bas, gauche */ 
+  display: none;          /* caché par défaut */
+}
+.Reponses.actif {
+  display: block;          
+}
+
+.Questions .Questions_Titre,
+.Reponses_Titre {
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(108, 142, 214);
+  font-size: 2em;
+}
+
+/* Footer avec bouton centré en bas */
+.Questions_footer {
+  display: flex;
+  justify-content: center;
+  bottom: 20px;  /* pousse le footer en bas de la box */
+  border: #222 2px solid;
+  padding: 10px 0;   /* optionnel, pour un peu de padding */
+}
+
+.Questions_btn_reponse {
+  background-color: #4a5cff;  /* bleu */
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 60vw ;
+  height: 5vh ;
+}
+
+.Questions_btn_reponse:hover {
+  background-color: #3240cc; /* bleu plus foncé au hover */
+}
+.Questions_timer {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  width: 12vh;
+  height: 12vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #6575ff;
+  background: conic-gradient(#00ffe0 0deg, #00ffe0 360deg, rgba(0,0,0,0.1) 360deg);
+  border-radius: 50%;
+  border: 3px solid #00ffe0;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+/* Pulsations selon le palier */
+.pulse1 {
+  animation: pulse 1s infinite;
+}
+.pulse2 {
+  animation: pulse 0.5s infinite;
+}
+.pulse3 {
+  animation: pulse 0.33s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}

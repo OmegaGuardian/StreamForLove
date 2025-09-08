@@ -6,7 +6,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="../All.css" />
 		<link rel="stylesheet" href="00_All.css" />
-		<link rel="stylesheet" href="01_CP.css" />
 		<!-- IMPORTANT: Inclure le script de protection -->
 		<script src="../auth-check.js"></script>
 	</head>
@@ -36,140 +35,490 @@
 			</div>
 			<!-- Catégorie Anglais -->
 			<div class="contenu" id="cat_ang_quest">
-				<div class="retour-button">
-        			<a class="bouton" onclick="toggleCategorie('cat_matiere')" role="button" tabindex="0">Retour</a>
-    			</div>
+				<div class="retour-button"><span class="bouton" onclick="toggleCategorie('cat_matiere')" role="button" tabindex="0">Retour</span></div>
 				<div class="MainContenainer">
-					<div class="TopLine"><span class="Matiere">Anglais</span></div>
+					<div class="QuestionsTopLine"><span class="Matiere">Anglais</span></div>
 					<div class="SomFlexContainerQuestions">
 						<div class="col">
-							<span class="bouton" onclick="toggleCategorie('cat_ang_quest_1')" role="button" tabindex="0">Question 1</span>
-							<span class="bouton" onclick="toggleCategorie('cat_ang_quest_2')" role="button" tabindex="0">Question 2</span>
+							<span class="bouton" onclick="OuvrirCat('cat_ang_quest_1')" role="button" tabindex="0">Question 1</span>
+							<span class="bouton" onclick="OuvrirCat('cat_ang_quest_2')" role="button" tabindex="0">Question 2</span>
 						</div>
 						<div class="col">
-							<span class="bouton" onclick="toggleCategorie('cat_ang_quest_3')" role="button" tabindex="0">Question 3</span>
-							<span class="bouton" onclick="toggleCategorie('cat_ang_quest_4')" role="button" tabindex="0">Question 4</span>
+							<span class="bouton" onclick="OuvrirCat('cat_ang_quest_3')" role="button" tabindex="0">Question 3</span>
+							<span class="bouton" onclick="OuvrirCat('cat_ang_quest_4')" role="button" tabindex="0">Question 4</span>
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- Catégorie Maths -->
 			<div class="contenu" id="cat_math_quest">
-				<div class="retour-button">
-					<a class="bouton" onclick="toggleCategorie('cat_matiere')" role="button" tabindex="0">Retour</a>
-				</div>
+			<div class="retour-button"><span class="bouton" onclick="toggleCategorie('cat_matiere')" role="button" tabindex="0">Retour</span></div>
 				<div class="MainContenainer">
-					<div class="TopLine"><span class="Matiere">Maths</span></div>
+					<div class="QuestionsTopLine"><span class="Matiere">Maths</span></div>
 					<div class="SomFlexContainerQuestions">
 						<div class="col">
-							<span class="bouton" onclick="toggleCategorie('cat_math_quest_1')" role="button" tabindex="0">Question 1</span>
-							<span class="bouton" onclick="toggleCategorie('cat_math_quest_2')" role="button" tabindex="0">Question 2</span>
+							<span class="bouton" onclick="OuvrirCat('cat_math_quest_1')" role="button" tabindex="0">Question 1</span>
+							<span class="bouton" onclick="OuvrirCat('cat_math_quest_2')" role="button" tabindex="0">Question 2</span>
 						</div>
 						<div class="col">
-							<span class="bouton" onclick="toggleCategorie('cat_math_quest_3')" role="button" tabindex="0">Question 3</span>
-							<span class="bouton" onclick="toggleCategorie('cat_math_quest_4')" role="button" tabindex="0">Question 4</span>
+							<span class="bouton" onclick="OuvrirCat('cat_math_quest_3')" role="button" tabindex="0">Question 3</span>
+							<span class="bouton" onclick="OuvrirCat('cat_math_quest_4')" role="button" tabindex="0">Question 4</span>
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- Catégorie Français -->
 			<div class="contenu" id="cat_fr_quest">
-				<div class="retour-button">
-					<a class="bouton" onclick="toggleCategorie('cat_matiere')" role="button" tabindex="0">Retour</a>
-				</div>
+			<div class="retour-button"><span class="bouton" onclick="toggleCategorie('cat_matiere')" role="button" tabindex="0">Retour</span></div>
 				<div class="MainContenainer">
-					<div class="TopLine"><span class="Matiere">Français</span></div>
+					<div class="QuestionsTopLine"><span class="Matiere">Français</span></div>
 					<div class="SomFlexContainerQuestions">
 						<div class="col">
-							<span class="bouton" onclick="toggleCategorie('cat_fr_quest_1')" role="button" tabindex="0">Question 1</span>
-							<span class="bouton" onclick="toggleCategorie('cat_fr_quest_2')" role="button" tabindex="0">Question 2</span>
+							<span class="bouton" onclick="OuvrirCat('cat_fr_quest_1')" role="button" tabindex="0">Question 1</span>
+							<span class="bouton" onclick="OuvrirCat('cat_fr_quest_2')" role="button" tabindex="0">Question 2</span>
 						</div>
 						<div class="col">
-							<span class="bouton" onclick="toggleCategorie('cat_fr_quest_3')" role="button" tabindex="0">Question 3</span>
-							<span class="bouton" onclick="toggleCategorie('cat_fr_quest_4')" role="button" tabindex="0">Question 4</span>
+							<span class="bouton" onclick="OuvrirCat('cat_fr_quest_3')" role="button" tabindex="0">Question 3</span>
+							<span class="bouton" onclick="OuvrirCat('cat_fr_quest_4')" role="button" tabindex="0">Question 4</span>
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- Catégorie Histoire -->
 			<div class="contenu" id="cat_hist_quest">
-				<div class="retour-button">
-					<a class="bouton" onclick="toggleCategorie('cat_matiere')" role="button" tabindex="0">Retour</a>
-				</div>
+			<div class="retour-button"><span class="bouton" onclick="toggleCategorie('cat_matiere')" role="button" tabindex="0">Retour</span></div>
 				<div class="MainContenainer">
-					<div class="TopLine"><span class="Matiere">Histoire</span></div>
+					<div class="QuestionsTopLine"><span class="Matiere">Histoire</span></div>
 					<div class="SomFlexContainerQuestions">
 						<div class="col">
-							<span class="bouton" onclick="toggleCategorie('cat_hist_quest_1')" role="button" tabindex="0">Question 1</span>
-							<span class="bouton" onclick="toggleCategorie('cat_hist_quest_2')" role="button" tabindex="0">Question 2</span>
+							<span class="bouton" onclick="OuvrirCat('cat_hist_quest_1')" role="button" tabindex="0">Question 1</span>
+							<span class="bouton" onclick="OuvrirCat('cat_hist_quest_2')" role="button" tabindex="0">Question 2</span>
 						</div>
 						<div class="col">
-							<span class="bouton" onclick="toggleCategorie('cat_hist_quest_3')" role="button" tabindex="0">Question 3</span>
-							<span class="bouton" onclick="toggleCategorie('cat_hist_quest_4')" role="button" tabindex="0">Question 4</span>
+							<span class="bouton" onclick="OuvrirCat('cat_hist_quest_3')" role="button" tabindex="0">Question 3</span>
+							<span class="bouton" onclick="OuvrirCat('cat_hist_quest_4')" role="button" tabindex="0">Question 4</span>
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- Catégorie Découvrir le monde -->
 			<div class="contenu" id="cat_dlm_quest">
-				<div class="retour-button">
-					<a class="bouton" onclick="toggleCategorie('cat_matiere')" role="button" tabindex="0">Retour</a>
-				</div>
+			<div class="retour-button"><span class="bouton" onclick="toggleCategorie('cat_matiere')" role="button" tabindex="0">Retour</span></div>
 				<div class="MainContenainer">
-					<div class="TopLine"><span class="Matiere">Découvrir le monde</span></div>
+					<div class="QuestionsTopLine"><span class="Matiere">Découvrir le monde</span></div>
 					<div class="SomFlexContainerQuestions">
 						<div class="col">
-							<span class="bouton" onclick="toggleCategorie('cat_dlm_quest_1')" role="button" tabindex="0">Question 1</span>
-							<span class="bouton" onclick="toggleCategorie('cat_dlm_quest_2')" role="button" tabindex="0">Question 2</span>
+							<span class="bouton" onclick="OuvrirCat('cat_dlm_quest_1')" role="button" tabindex="0">Question 1</span>
+							<span class="bouton" onclick="OuvrirCat('cat_dlm_quest_2')" role="button" tabindex="0">Question 2</span>
 						</div>
 						<div class="col">
-							<span class="bouton" onclick="toggleCategorie('cat_dlm_quest_3')" role="button" tabindex="0">Question 3</span>
-							<span class="bouton" onclick="toggleCategorie('cat_dlm_quest_4')" role="button" tabindex="0">Question 4</span>
+							<span class="bouton" onclick="OuvrirCat('cat_dlm_quest_3')" role="button" tabindex="0">Question 3</span>
+							<span class="bouton" onclick="OuvrirCat('cat_dlm_quest_4')" role="button" tabindex="0">Question 4</span>
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- Catégorie Questionner le monde -->
 			<div class="contenu" id="cat_qlm_quest">
-				<div class="retour-button">
-					<a class="bouton" onclick="toggleCategorie('cat_matiere')" role="button" tabindex="0">Retour</a>
-				</div>
+			<div class="retour-button"><span class="bouton" onclick="toggleCategorie('cat_matiere')" role="button" tabindex="0">Retour</span></div>
 				<div class="MainContenainer">
-					<div class="TopLine"><span class="Matiere">Questionner le monde</span></div>
+					<div class="QuestionsTopLine"><span class="Matiere">Questionner le monde</span></div>
 					<div class="SomFlexContainerQuestions">
 						<div class="col">
-							<span class="bouton" onclick="toggleCategorie('cat_qlm_quest_1')" role="button" tabindex="0">Question 1</span>
-							<span class="bouton" onclick="toggleCategorie('cat_qlm_quest_2')" role="button" tabindex="0">Question 2</span>
+							<span class="bouton" onclick="OuvrirCat('cat_qlm_quest_1')" role="button" tabindex="0">Question 1</span>
+							<span class="bouton" onclick="OuvrirCat('cat_qlm_quest_2')" role="button" tabindex="0">Question 2</span>
 						</div>
 						<div class="col">
-							<span class="bouton" onclick="toggleCategorie('cat_qlm_quest_3')" role="button" tabindex="0">Question 3</span>
-							<span class="bouton" onclick="toggleCategorie('cat_qlm_quest_4')" role="button" tabindex="0">Question 4</span>
+							<span class="bouton" onclick="OuvrirCat('cat_qlm_quest_3')" role="button" tabindex="0">Question 3</span>
+							<span class="bouton" onclick="OuvrirCat('cat_qlm_quest_4')" role="button" tabindex="0">Question 4</span>
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- Catégorie Sport -->
 			<div class="contenu" id="cat_sport_quest">
-				<div class="retour-button">
-					<a class="bouton" onclick="toggleCategorie('cat_matiere')" role="button" tabindex="0">Retour</a>
-				</div>
+				<div class="retour-button"><span class="bouton" onclick="toggleCategorie('cat_matiere')" role="button" tabindex="0">Retour</span></div>
 				<div class="MainContenainer">
-					<div class="TopLine"><span class="Matiere">Sport</span></div>
+					<div class="QuestionsTopLine"><span class="Matiere">Sport</span></div>
 					<div class="SomFlexContainerQuestions">
 						<div class="col">
-							<span class="bouton" onclick="toggleCategorie('cat_sport_quest_1')" role="button" tabindex="0">Question 1</span>
-							<span class="bouton" onclick="toggleCategorie('cat_sport_quest_2')" role="button" tabindex="0">Question 2</span>
+							<span class="bouton" onclick="OuvrirCat('cat_sport_quest_1')" role="button" tabindex="0">Question 1</span>
+							<span class="bouton" onclick="OuvrirCat('cat_sport_quest_2')" role="button" tabindex="0">Question 2</span>
 						</div>
 						<div class="col">
-							<span class="bouton" onclick="toggleCategorie('cat_sport_quest_3')" role="button" tabindex="0">Question 3</span>
-							<span class="bouton" onclick="toggleCategorie('cat_sport_quest_4')" role="button" tabindex="0">Question 4</span>
+							<span class="bouton" onclick="OuvrirCat('cat_sport_quest_3')" role="button" tabindex="0">Question 3</span>
+							<span class="bouton" onclick="OuvrirCat('cat_sport_quest_4')" role="button" tabindex="0">Question 4</span>
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- Questions pour chaque matière -->
 			<!-- Question Anglais--> 
-
+			<div id="cat_ang_quest_1" class="overlay">
+			  	<div class="box">
+			    	<span class="close" onclick="['cat_ang_quest_1','cat_ang_rep_1'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°1</span>
+			    		<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_ang_rep_1" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+			    		<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_ang_rep_1')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<div id="cat_ang_quest_2" class="overlay">
+				<div class="box">
+			    	<span class="close" onclick="['cat_ang_quest_2','cat_ang_rep_2'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="3">00:00</div>
+						<span class="Questions_Titre">Question n°2</span>
+			    		<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_ang_rep_2" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+			    		<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_ang_rep_2')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<div id="cat_ang_quest_3" class="overlay">
+				<div class="box">
+				    <span class="close" onclick="['cat_ang_quest_3','cat_ang_rep_3'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°3</span>
+				    	<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_ang_rep_3" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+				    	<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_ang_rep_3')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<div id="cat_ang_quest_4" class="overlay">
+				<div class="box">
+				    <span class="close" onclick="['cat_ang_quest_4','cat_ang_rep_4'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°4</span>
+				    	<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_ang_rep_4" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+				    	<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_ang_rep_4')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<!-- Question Maths-->
+			<div id="cat_math_quest_1" class="overlay">
+				<div class="box">
+				    <span class="close" onclick="['cat_math_quest_1','cat_math_rep_1'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°1</span>
+				    	<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_math_rep_1" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+				    	<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_math_rep_1')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<div id="cat_math_quest_2" class="overlay">
+				<div class="box">
+			    	<span class="close" onclick="['cat_math_quest_2','cat_math_rep_2'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°2</span>
+			    		<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_math_rep_2" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+			    		<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_math_rep_2')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<div id="cat_math_quest_3" class="overlay">
+				<div class="box">
+			    	<span class="close" onclick="['cat_math_quest_3','cat_math_rep_3'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°3</span>
+			    		<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_math_rep_3" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+			    		<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_math_rep_3')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<div id="cat_math_quest_4" class="overlay">
+				<div class="box">
+			    	<span class="close" onclick="['cat_math_quest_4','cat_math_rep_4'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°4</span>
+			    		<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_math_rep_4" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+			    		<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_math_rep_4')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<!-- Question Français -->
+			<div id="cat_fr_quest_1" class="overlay">
+				<div class="box">
+				    <span class="close" onclick="['cat_fr_quest_1','cat_fr_rep_1'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°1</span>
+				    	<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_fr_rep_1" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+				    	<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_fr_rep_1')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<div id="cat_fr_quest_2" class="overlay">
+				<div class="box">
+				    <span class="close" onclick="['cat_fr_quest_2','cat_fr_rep_2'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°2</span>
+				    	<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_fr_rep_2" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+				    	<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_fr_rep_2')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<div id="cat_fr_quest_3" class="overlay">
+				<div class="box">
+				    <span class="close" onclick="['cat_fr_quest_3','cat_fr_rep_3'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°3</span>
+				    	<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_fr_rep_3" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+				    	<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_fr_rep_3')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<div id="cat_fr_quest_4" class="overlay">
+				<div class="box">
+				    <span class="close" onclick="['cat_fr_quest_4','cat_fr_rep_4'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°4</span>
+				    	<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_fr_rep_4" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+				    	<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_fr_rep_4')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<!-- Question Découvrir le monde -->
+			<div id="cat_dlm_quest_1" class="overlay">
+				<div class="box">
+				    <span class="close" onclick="['cat_dlm_quest_1','cat_dlm_rep_1'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°1</span>
+				    	<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_dlm_rep_1" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+				    	<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_dlm_rep_1')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<div id="cat_dlm_quest_2" class="overlay">
+				<div class="box">
+				    <span class="close" onclick="['cat_dlm_quest_2','cat_dlm_rep_2'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°2</span>
+				    	<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_dlm_rep_2" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+				    	<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_dlm_rep_2')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<div id="cat_dlm_quest_3" class="overlay">
+				<div class="box">
+				    <span class="close" onclick="['cat_dlm_quest_3','cat_dlm_rep_3'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°3</span>
+				    	<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_dlm_rep_3" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+				    	<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_dlm_rep_3')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<div id="cat_dlm_quest_4" class="overlay">
+				<div class="box">
+				    <span class="close" onclick="['cat_dlm_quest_4','cat_dlm_rep_4'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°4</span>
+				    	<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_dlm_rep_4" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+				    	<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_dlm_rep_4')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<!-- Question Questionner le monde -->
+			<div id="cat_qlm_quest_1" class="overlay">
+				<div class="box">
+				    <span class="close" onclick="['cat_qlm_quest_1','cat_qlm_rep_1'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°1</span>
+				    	<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_qlm_rep_1" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+				    	<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_qlm_rep_1')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<div id="cat_qlm_quest_2" class="overlay">
+				<div class="box">
+				    <span class="close" onclick="['cat_qlm_quest_2','cat_qlm_rep_2'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°2</span>
+				    	<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_qlm_rep_2" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+				    	<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_qlm_rep_2')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<div id="cat_qlm_quest_3" class="overlay">
+				<div class="box">
+				    <span class="close" onclick="['cat_qlm_quest_3','cat_qlm_rep_3'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°3</span>
+				    	<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_qlm_rep_3" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+				    	<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_qlm_rep_3')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<div id="cat_qlm_quest_4" class="overlay">
+				<div class="box">
+				    <span class="close" onclick="['cat_qlm_quest_4','cat_qlm_rep_4'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°4</span>
+				    	<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_qlm_rep_4" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+				    	<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_qlm_rep_4')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<!-- Question Sport -->
+			<div id="cat_sport_quest_1" class="overlay">
+				<div class="box">
+				    <span class="close" onclick="['cat_sport_quest_1','cat_sport_rep_1'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°1</span>
+				    	<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_sport_rep_1" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+				    	<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_sport_rep_1')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<div id="cat_sport_quest_2" class="overlay">
+				<div class="box">
+				    <span class="close" onclick="['cat_sport_quest_2','cat_sport_rep_2'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°2</span>
+				    	<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_sport_rep_2" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+				    	<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_sport_rep_2')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<div id="cat_sport_quest_3" class="overlay">
+				<div class="box">
+				    <span class="close" onclick="['cat_sport_quest_3','cat_sport_rep_3'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°3</span>
+				    	<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_sport_rep_3" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+				    	<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_sport_rep_3')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
+			<div id="cat_sport_quest_4" class="overlay">
+				<div class="box">
+				    <span class="close" onclick="['cat_sport_quest_4','cat_sport_rep_4'].forEach(id => fermerCategorie(id))">&times;</span>
+					<div class="Questions">
+						<div id="timer_unique" class="Questions_timer" data-duree="15">00:00</div>
+						<span class="Questions_Titre">Question n°4</span>
+				    	<p>Voici le contenu de ma question superposée.</p>
+					</div>
+					<div id="cat_sport_rep_4" class="Reponses" >
+						<span class="Reponses_Titre">Réponse</span>
+				    	<p>Voici le contenu de la réponse superposée.</p>
+					</div>
+					<div class="Questions_footer"><button class="Questions_btn_reponse" onclick="OuvrirCatSSTime('cat_sport_rep_4')" role="button" tabindex="0">REPONSE</button></div>
+				</div>
+			</div>
 		</main>
 		<script src="00_All-JS.js"></script>
 		<script src="../All.js"></script>

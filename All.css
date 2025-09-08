@@ -10,7 +10,20 @@
   font-weight: normal;
   font-style: normal;
 }
-
+@keyframes chalkDraw {
+  0% {
+  opacity: 0.8;
+  transform: rotate(1deg);
+  }
+  50% {
+  opacity: 1;
+  transform: rotate(0.5deg);
+  }
+  100% {
+  opacity: 0.9;
+  transform: rotate(1deg);
+  }
+}
 
 
 header {
@@ -83,102 +96,8 @@ main {
   box-sizing: border-box;
 }
 
-.Retour-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-}
 
-.Retour-button {
-  position: relative;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #ffffff;
-  font-family: 'Schoolbell', sans-serif;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-  transform: rotate(-0.5deg);
-  transition: all 0.3s ease;
-}
-
-.Retour-button-text {
-  position: relative;
-  z-index: 2;
-}
-
-/* Effet craie avec pseudo-élément */
-.Retour-button::after {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: -12px;
-  right: -10px;
-  bottom: -10px;
-  border-radius: 45% 55% 70% 30% / 60% 40% 60% 40%;
-  background:
-  conic-gradient(from 0deg at 50% 50%,
-  rgba(255, 255, 255, 0.9) 0deg,
-  rgba(255, 255, 255, 0.5) 15deg,
-  rgba(255, 255, 255, 0.95) 25deg,
-  rgba(255, 255, 255, 0.6) 40deg,
-  rgba(255, 255, 255, 0.9) 55deg,
-  rgba(255, 255, 255, 0.4) 70deg,
-  rgba(255, 255, 255, 0.95) 85deg,
-  rgba(255, 255, 255, 0.7) 100deg,
-  rgba(255, 255, 255, 0.9) 115deg,
-  rgba(255, 255, 255, 0.5) 130deg,
-  rgba(255, 255, 255, 0.85) 145deg,
-  rgba(255, 255, 255, 0.6) 160deg,
-  rgba(255, 255, 255, 0.9) 175deg,
-  rgba(255, 255, 255, 0.4) 190deg,
-  rgba(255, 255, 255, 0.95) 205deg,
-  rgba(255, 255, 255, 0.7) 220deg,
-  rgba(255, 255, 255, 0.85) 235deg,
-  rgba(255, 255, 255, 0.5) 250deg,
-  rgba(255, 255, 255, 0.9) 265deg,
-  rgba(255, 255, 255, 0.6) 280deg,
-  rgba(255, 255, 255, 0.95) 295deg,
-  rgba(255, 255, 255, 0.7) 310deg,
-  rgba(255, 255, 255, 0.85) 325deg,
-  rgba(255, 255, 255, 0.5) 340deg,
-  rgba(255, 255, 255, 0.9) 360deg);
-  mask:
-  radial-gradient(ellipse at center, transparent 60%, black 65%),
-  radial-gradient(ellipse at center, transparent 75%, black 80%);
-  mask-composite: subtract;
-  box-shadow:
-  0 0 0 1px rgba(255, 255, 255, 0.3),
-  0 0 3px rgba(255, 255, 255, 0.2);
-  filter:
-  drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.4))
-  drop-shadow(-1px -1px 1px rgba(255, 255, 255, 0.3));
-  transform: rotate(1deg);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.Retour-button:hover {
-  color: #f0f0f0;
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-  transform: rotate(-0.5deg) scale(1.05);
-}
-
-.Retour-button:hover::after {
-  transform: rotate(1deg) scale(1.1);
-  box-shadow:
-  0 0 0 2px rgba(255, 255, 255, 0.4),
-  0 0 8px rgba(255, 255, 255, 0.3);
-  filter:
-  drop-shadow(2px 2px 1px rgba(255, 255, 255, 0.5))
-  drop-shadow(-1px -1px 1px rgba(255, 255, 255, 0.4));
-}
-
+/* =================================== */
 .retour-button {
   position: fixed;
   top: 20px;
@@ -187,9 +106,11 @@ main {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
+  z-index: 980;
 }
 
-.retour-button a {
+.retour-button a,
+.retour-button span {
   display: block;
   padding: 12px 24px;
   color: #ffffff;
@@ -202,11 +123,19 @@ main {
   transition: all 0.4s ease;
 }
 
-.retour-button a::before {
+.retour-button:hover a,
+.retour-button:hover span {
+  color: #f0f0f0;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  transform: rotate(-0.5deg) scale(1.1);
+}
+.retour-button a::before,
+.retour-button span::before{
   display: none;
 }
 
-.retour-button a::after {
+.retour-button a::after,
+.retour-button span::after {
   content: '';
   position: absolute;
   top: -10px;
@@ -252,52 +181,4 @@ main {
   drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.4))
   drop-shadow(-1px -1px 1px rgba(255, 255, 255, 0.3));
   transform: rotate(1deg);
-}
-
-@keyframes chalkDraw {
-  0% {
-  opacity: 0.8;
-  transform: rotate(1deg);
-  }
-  50% {
-  opacity: 1;
-  transform: rotate(0.5deg);
-  }
-  100% {
-  opacity: 0.9;
-  transform: rotate(1deg);
-  }
-}
-
-.retour-button:hover a {
-  color: #f0f0f0;
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-  transform: rotate(-0.5deg) scale(1.1);
-}
-.retour-button:hover a::after {
-  transform: rotate(1deg) scale(1.1);
-  box-shadow: 
-  0 0 0 2px rgba(255, 255, 255, 0.4),
-  0 0 8px rgba(255, 255, 255, 0.3);
-  filter: 
-  drop-shadow(2px 2px 1px rgba(255, 255, 255, 0.5))
-  drop-shadow(-1px -1px 1px rgba(255, 255, 255, 0.4));
-}
-
-.retour-button a {
-  display: block;
-  padding: 12px 24px;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: relative;
-  transition: all 0.4s ease;
-  background: transparent;
-  text-shadow: 
-  1px 1px 1px rgba(0, 0, 0, 0.5);
-  transform: rotate(-0.5deg);
-  z-index: 1;
 }
