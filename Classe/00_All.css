@@ -169,23 +169,37 @@
 .overlay .box .close:hover {
   background: #e00; /* rouge au survol */
 }
-
 .Questions, .Reponses {
   text-align: left;
   white-space: normal;
   word-wrap: break-word;
-  margin: 40px 10% 40px 1vw; /* haut, droite, bas, gauche */ 
-  flex: 1 1 auto;           /* prend tout l'espace disponible */
+  margin: 40px 10% 40px 1vw;
+  flex: 1 1 auto;
   border: #f9e7b9 2px solid;
+  display: block;
 }
 
-.Questions {margin: 40px 10% 0 1vw; /* haut, droite, bas, gauche */ }
+/* pour superposer le cache */
 .Reponses {
-  margin: 0 10% 40px 1vw; /* haut, droite, bas, gauche */ 
-  display: none;          /* caché par défaut */
+  position: relative;
+  margin: 0 10% 40px 1vw;
 }
-.Reponses.actif {
-  display: block;          
+
+/* le cache par-dessus */
+.Reponses_Block {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff; /* couleur de cache */
+  opacity: 1;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* quand on enlève le cache */
+.Reponses_Block.actif {
+  display: none;
 }
 
 .Questions .Questions_Titre,
@@ -195,17 +209,16 @@
   font-size: 2em;
 }
 
-/* Footer avec bouton centré en bas */
 .Questions_footer {
   display: flex;
   justify-content: center;
-  bottom: 20px;  /* pousse le footer en bas de la box */
+  bottom: 20px;
   border: #222 2px solid;
-  padding: 10px 0;   /* optionnel, pour un peu de padding */
+  padding: 10px 0;
 }
 
 .Questions_btn_reponse {
-  background-color: #4a5cff;  /* bleu */
+  background-color: #4a5cff;
   color: white;
   border: none;
   padding: 15px 40px;
@@ -214,13 +227,14 @@
   font-size: 1.2em;
   cursor: pointer;
   transition: background 0.3s;
-  width: 60vw ;
-  height: 5vh ;
+  width: 60vw;
+  height: 5vh;
 }
 
 .Questions_btn_reponse:hover {
-  background-color: #3240cc; /* bleu plus foncé au hover */
+  background-color: #3240cc;
 }
+
 .Questions_timer {
   position: absolute;
   top: 40px;

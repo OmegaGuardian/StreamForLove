@@ -62,29 +62,46 @@ function demarrerTimerUnique(timerElement) {
     const audioFin = new Audio('../asset/sound/ns-ding-dong.mp3');
 
     function mettreAJourTimer() {
-        let minutes = Math.floor(tempsRestant / 60);
-        let secondes = tempsRestant % 60;
-        timerElement.textContent = `${minutes.toString().padStart(2,'0')}:${secondes.toString().padStart(2,'0')}`;
+    let minutes = Math.floor(tempsRestant / 60);
+    let secondes = tempsRestant % 60;
 
-        const deg = (tempsRestant / total) * 360;
-        timerElement.style.setProperty('--fill', `conic-gradient(#00ffe0 0deg, #00ffe0 ${deg}deg, rgba(0,0,0,0.1) ${deg}deg)`);
-
-        timerElement.classList.remove('pulse1', 'pulse2', 'pulse3');
-        if (tempsRestant <= 0) {
-            clearInterval(window.intervalTimer);
-            timerElement.textContent = "00:00";
-            timerElement.style.transform = 'scale(1)';
-            audioFin.play();
-        } else if (tempsRestant <= 3) {
-            timerElement.classList.add('pulse3');
-        } else if (tempsRestant <= 5) {
-            timerElement.classList.add('pulse2');
-        } else if (tempsRestant <= 10) {
-            timerElement.classList.add('pulse1');
+    // Gestion de l'affichage
+    if (minutes > 0) {
+        // Affiche minutes:secondes (minutes sans zéro devant)
+        timerElement.textContent = `${minutes}:${secondes.toString().padStart(2,'0')}`;
+    } else {
+        // Moins d'une minute → uniquement les secondes
+        if (secondes < 10) {
+            timerElement.textContent = `${secondes}`; // ex: 9
+        } else {
+            timerElement.textContent = `${secondes}`; // ex: 45
         }
-
-        tempsRestant--;
     }
+
+    // Animation du cercle
+    const deg = (tempsRestant / total) * 360;
+    timerElement.style.setProperty('--fill',
+        `conic-gradient(#00ffe0 0deg, #00ffe0 ${deg}deg, rgba(0,0,0,0.1) ${deg}deg)`
+    );
+
+    // Gestion des classes pulse
+    timerElement.classList.remove('pulse1', 'pulse2', 'pulse3');
+    if (tempsRestant <= 0) {
+        clearInterval(window.intervalTimer);
+        timerElement.textContent = "0"; // fin = 0
+        timerElement.style.transform = 'scale(1)';
+        audioFin.play();
+    } else if (tempsRestant <= 3) {
+        timerElement.classList.add('pulse3');
+    } else if (tempsRestant <= 5) {
+        timerElement.classList.add('pulse2');
+    } else if (tempsRestant <= 10) {
+        timerElement.classList.add('pulse1');
+    }
+
+    tempsRestant--;
+    }
+
 
     mettreAJourTimer();
     window.intervalTimer = setInterval(mettreAJourTimer, 1000);
